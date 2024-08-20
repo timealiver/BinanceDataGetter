@@ -13,9 +13,9 @@ let endDate = moment('2024-06-25');
 
 for (let date = startDate; date <= endDate; date.add(1, 'days')) {
   const formattedDate = date.format('YYYY-MM-DD');
-  const url = `https://data.binance.vision/data/spot/daily/klines/SOLUSDT/15m/SOLUSDT-15m-${formattedDate}.zip`;
+  const url = `https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-${formattedDate}.zip`;
   const file = fs.createWriteStream(
-    path.join('./data', `SOLUSDT-15m-${formattedDate}.zip`),
+    path.join('./data', `BTCUSDT-1h-${formattedDate}.zip`),
   );
 
   const request = https.get(url, function (response) {
